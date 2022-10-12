@@ -1,5 +1,6 @@
 import './App.css';
 import Barchart from './Charts/Barchart';
+import Gauge from './Charts/Gaugechart';
 import Linechart from './Charts/Linechart';
 function App() {
   return (
@@ -7,6 +8,7 @@ function App() {
       <h1> Ejemplos Graficos </h1>
       <Barchart/>
       <Linechart/>
+      <Gauge/>
     </div>
   );
 }
