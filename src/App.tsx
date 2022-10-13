@@ -6,9 +6,15 @@ function App() {
   return (
     <div>
       <h1> Ejemplos Graficos </h1>
-      <Barchart/>
-      <Linechart/>
-      <Gauge/>
+      <div className='parent'>
+        <div className='graph'><Barchart/></div>
+      </div>
+      <div className='parent'>
+        <div className='graph'><Linechart/></div>
+      </div>
+      <div className='parent'>
+        <div className='graph'><Gauge/></div>
+      </div>      
     </div>
   );
 }
