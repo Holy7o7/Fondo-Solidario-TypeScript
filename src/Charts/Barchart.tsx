@@ -26,36 +26,26 @@ export const options = {
     },
     title: {
       display: true,
-      text: 'Chart.js Bar Chart',
+      text: 'Grafico de Barras Trimestral',
     },
   },
 };
 
-const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+const labels = ['Enero', 'Febrero', 'Marzo'];
 
 
 export const data = {
   labels,
   datasets: [
     {
-      label: 'Dataset 1',
-      data: labels.map(() => Math.floor(Math.random() * 1000)),
-      backgroundColor: 'rgba(255, 99, 132, 0.5)',
-    },
-    {
-      label: 'Dataset 2',
-      data: labels.map(() => Math.floor(Math.random() * 1000)),
-      backgroundColor: 'rgba(53, 162, 235, 0.5)',
-    },
-    {
-      label: 'Dataset 3',
-      data: labels.map(() => Math.floor(Math.random() * 1000)),
-      backgroundColor: 'rgba(124, 252, 0, 0.5)',
-    },
-    {
-      label: 'Dataset 4',
+      label: 'Indicador 1',
       data: labels.map(() => Math.floor(Math.random() * 1000)),
       backgroundColor: 'rgba(138, 43, 226, 0.5)',
+    },
+    {
+      label: 'Indicador 2',
+      data: labels.map(() => Math.floor(Math.random() * 1000)),
+      backgroundColor: 'rgba(53, 162, 235, 0.5)',
     },
   ],
 };

@@ -32,26 +32,26 @@ export const options = {
       },
       title: {
         display: true,
-        text: 'Chart.js Line Chart',
+        text: 'Grafico de Lineas Semestre',
       },
     },
   };
 
-const labels = ['January', 'February', 'March', 'April', 'May', 'June', 'July'];
+const labels = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio'];
 
 
 const data = {
   labels,
   datasets: [
     {
-      label: "First dataset",
+      label: "Indicador 1",
       data: labels.map(() => Math.floor(Math.random() * 1000)),
       fill: false,
       backgroundColor: "rgba(75,192,192,0.2)",
       borderColor: "rgba(75,192,192,1)"
     },
     {
-      label: "Second dataset",
+      label: "Indicado 2",
       data: labels.map(() => Math.floor(Math.random() * 1000)),
       fill: false,
       borderColor: "#742774"

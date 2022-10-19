@@ -5,7 +5,7 @@ const Gauge = () => (
   <GaugeChart
     id="gauge-chart1"
     nrOfLevels={3}
-    percent={1}
+    percent={Math.random()}
     hideText={false}
     textColor="transparent"
     needleBaseColor="black"
