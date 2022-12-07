@@ -7,7 +7,7 @@ const Gauge = () => (
     nrOfLevels={3}
     percent={Math.random()}
     hideText={false}
-    textColor="transparent"
+    textColor="black"
     needleBaseColor="black"
     arcPadding={0.015}
     cornerRadius={0}

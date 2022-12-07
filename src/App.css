@@ -1,38 +1,60 @@
-.parent {
+.blockGraphs {
   border: 1px solid black;
   margin: 1rem;
   padding: 1rem;
   text-align: left;
+  width: 800px;
+  height: 400px;
+  position: relative;
+    left: 100px;
+    top: 50px;
+}
+
+.blockGauge{
+  border: 1px solid black;
+  margin: 1rem;
+  padding: 1rem;
+  text-align: left;
+  width: 600px;
+  height: 400px;
+  position: relative;
+  left: 1100px;
+  bottom: 400px;
 }
 .graph {
   display: inline-block;
-  border: 1px solid red;
-  padding: 1px;
+  border: 1px solid black;
   vertical-align: middle;
+  width: 800px;
+  height: 400px;
 }
 
-.headers {
-  font-size: 22px;
-  font-weight: 600;
-  background-image: linear-gradient(to left, #384e95, #c31d1d);
-  color: transparent;
-  background-clip: text;
-  display: flex;
-  -webkit-background-clip: text;
-  justify-content: center;
-  align-items: center
+.gauge{
+  display: inline-block;
+  border: 1px solid black;
+  vertical-align: middle;
+  width: 600px;
+  height: 400px;
 }
+
+.blockButton{ 
+  text-align: left;
+  width: 150px;
+  height: 30px;
+  position: relative;
+  left: 700px;
+  bottom: 400px;
+}
+
 .button {
   background-color: #4CAF50;
   border: none;
   color: white;
-  padding: 15px 32px;
   text-align: center;
   text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
   cursor: pointer;
+  width: 150px;
+  height: 30px;
 }
 .graphTytle{
   font-size: 14px;
@@ -41,12 +63,6 @@
   background-clip: text;
   display: flex;
   -webkit-background-clip: text;
-  justify-content: center;
-  align-items: center
-}
-.centered{
-  display: flex;
-  font-size: 22px;
   justify-content: center;
   align-items: center
 }

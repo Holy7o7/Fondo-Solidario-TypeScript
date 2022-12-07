@@ -32,6 +32,12 @@ export const options = {
 };
 
 const labels = ['Enero', 'Febrero', 'Marzo'];
+const trimestre1 = ['Enero', 'Febrero', 'Marzo'];
+const trimestre2 = ['Abril', 'Mayo', 'Junio'];
+const trimestre3 = ['Julio', 'Agosto', 'Septiembre'];
+const trimestre4 = ['Octubre', 'Noviembre', 'Diciembre'];
+const semestre1 = ['Enero', 'Febrero', 'Marzo','Abril', 'Mayo', 'Junio'];
+const semestre2 = ['Julio', 'Agosto', 'Septiembre','Octubre', 'Noviembre', 'Diciembre'];
 
 
 export const data = {
