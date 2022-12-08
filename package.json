@@ -10,6 +10,7 @@
     "@types/node": "^16.11.64",
     "@types/react": "^18.0.21",
     "@types/react-dom": "^18.0.6",
+    "bootstrap": "^5.2.3",
     "chart.js": "^3.9.1",
     "faker": "^5.5.3",
     "react": "^18.2.0",
@@ -17,6 +18,9 @@
     "react-dom": "^18.2.0",
     "react-gauge-chart": "^0.4.0",
     "react-scripts": "^5.0.1",
+    "reactstrap": "^9.1.5",
+    "styled": "^1.0.0",
+    "styled-components": "^5.3.6",
     "typescript": "^4.8.4",
     "web-vitals": "^2.1.4"
   },
@@ -45,6 +49,10 @@
     ]
   },
   "devDependencies": {
-    "@types/react-gauge-chart": "^0.4.0"
+    "@types/react-gauge-chart": "^0.4.0",
+    "@types/styled-components": "^5.1.26"
+  },
+  "resolutions": {
+    "styled-components": "^5"
   }
 }
