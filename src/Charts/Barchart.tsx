@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef, useCallback } from 'react';
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -7,8 +7,9 @@ import {
   Title,
   Tooltip,
   Legend,
+  Chart,
 } from 'chart.js';
-import { Bar } from 'react-chartjs-2';
+import { Bar  } from 'react-chartjs-2';
 ChartJS.register(
   CategoryScale,
   LinearScale,
@@ -56,9 +57,22 @@ export const data = {
   ],
 };
 
+
 const Barchart: React.FunctionComponent = () => {
-    return( <Bar options={options} data={data} />
-    );
+    const barRef = useRef(null);
+
+    const downloadPNG =useCallback (() =>{
+      const link = document.createElement("a");
+      link.download = "bar.png";
+      link.href = barRef.current.toBase64Image("image/png", 1);
+      link.click();
+    }, [])
+
+    return(
+    <div>
+      <Bar options={options} data={data} ref={barRef}/>
+      <button type="button" onClick={downloadPNG}> Exportar </button>
+    </div>);
 };
 
 export default Barchart;

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useRef, useCallback } from 'react';
 
 import {
   Chart as ChartJS,
@@ -60,8 +60,19 @@ const data = {
 };
 
 const Linechart: React.FunctionComponent = () => {
-    return( <Line options={options} data={data} />
-    );
-};
+  const barRef = useRef(null);
 
+  const downloadPNG =useCallback (() =>{
+    const link = document.createElement("a");
+    link.download = "Line.png";
+    link.href = barRef.current.toBase64Image("image/png", 1);
+    link.click();
+  }, [])
+
+  return(
+  <div>
+    <Line options={options} data={data} ref={barRef}/>
+    <button type="button" onClick={downloadPNG}> Exportar </button>
+  </div>);
+};
 export default Linechart;
