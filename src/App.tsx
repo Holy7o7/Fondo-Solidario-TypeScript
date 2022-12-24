@@ -112,7 +112,7 @@ function App(this: any) {
 
     var data = llamado(val3,c);
     //const coj = parser(dataExp);
-    const coj = parser(data);
+    const coj = parser(dataExp);
     setSemestre1(coj);
     console.log(typeof(semestre))
     return coj
