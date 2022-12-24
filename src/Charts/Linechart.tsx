@@ -1,5 +1,4 @@
 import React, { useRef, useCallback } from 'react';
-
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -24,7 +23,29 @@ ChartJS.register(
   Filler
 );
 
-export const options = {
+
+export default function Linechart(periodo:any){
+  let labels: string[]= periodo.labels;
+  const data = {
+    labels,
+    datasets: [
+      {
+        label: "Indicador 1",
+        data: labels.map(() => Math.floor(Math.random() * 1000)),
+        fill: false,
+        backgroundColor: "rgba(75,192,192,0.2)",
+        borderColor: "rgba(75,192,192,1)"
+      },
+      {
+        label: "Indicado 2",
+        data: labels.map(() => Math.floor(Math.random() * 1000)),
+        fill: false,
+        borderColor: "#742774"
+      }
+    ]
+  };
+
+  const options = {
     responsive: true,
     plugins: {
       legend: {
@@ -37,35 +58,14 @@ export const options = {
     },
   };
 
-const labels = ['Enero', 'Febrero', 'Marzo', 'Abril', 'Mayo', 'Junio'];
-
-
-const data = {
-  labels,
-  datasets: [
-    {
-      label: "Indicador 1",
-      data: labels.map(() => Math.floor(Math.random() * 1000)),
-      fill: false,
-      backgroundColor: "rgba(75,192,192,0.2)",
-      borderColor: "rgba(75,192,192,1)"
-    },
-    {
-      label: "Indicado 2",
-      data: labels.map(() => Math.floor(Math.random() * 1000)),
-      fill: false,
-      borderColor: "#742774"
-    }
-  ]
-};
-
-const Linechart: React.FunctionComponent = () => {
   const barRef = useRef(null);
 
   const downloadPNG =useCallback (() =>{
+    let ref: any = "";
+    ref = barRef;
     const link = document.createElement("a");
-    link.download = "Line.png";
-    link.href = barRef.current.toBase64Image("image/png", 1);
+    link.download =  `${periodo.labels[0]} line.png`;
+    link.href = ref.current.toBase64Image();
     link.click();
   }, [])
 
@@ -75,4 +75,3 @@ const Linechart: React.FunctionComponent = () => {
     <button type="button" onClick={downloadPNG}> Exportar </button>
   </div>);
 };
-export default Linechart;

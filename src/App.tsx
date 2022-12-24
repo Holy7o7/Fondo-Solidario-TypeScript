@@ -2,7 +2,7 @@ import './App.css';
 import React, {useRef, useState} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import {Dropdown, DropdownItem, DropdownMenu, DropdownToggle, Button} from 'reactstrap';
-import Barchart, { options } from './Charts/Barchart';
+import Barchart from './Charts/Barchart';
 import Gauge from './Charts/Gaugechart';
 import Linechart from './Charts/Linechart';
 import Popup from 'reactjs-popup';
@@ -10,6 +10,7 @@ import TablaPeriodo from './component/tablePeriodo';
 import TablaTipo from './component/tableTipo';
 import Select from "react-select";
 
+const semestre1 = ['Enero', 'Febrero', 'Marzo','Abril', 'Mayo', 'Junio'];
 
 const otpT = [
   {value: "barra",label: "Barras"},
@@ -19,7 +20,7 @@ const otpT = [
 const otpP = [
   {value: "trimestre",label: "Trimestre"},
   {value: "semestre",label: "Semestre"}
-];
+];  
 
 function App(this: any) {
   const [val,setValue] = useState(null);
@@ -60,11 +61,11 @@ function App(this: any) {
     <div className='containerBody'>
       <div className='containerGraphs'>
         {show ?(<div className='blockGraphs'>
-          <div className='graph'> <Barchart/></div>
+          <div className='graph'> <Barchart labels={semestre1}/></div>
           </div>
           ):(
           <div className='blockGraphs'>
-            <div className='graph'> <Linechart/></div>
+            <div className='graph'> <Linechart labels={semestre1}/></div>
           </div>
           )}
       </div>
