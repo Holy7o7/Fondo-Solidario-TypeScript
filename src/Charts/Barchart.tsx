@@ -20,22 +20,71 @@ ChartJS.register(
 );
 
 
+function getMonthName(monthNumber:any) {
+  const date = new Date();
+  date.setMonth(monthNumber.Mes - 1);
+  return date.toLocaleString('es-ES', { month: 'long' });
+}
+
+function infor(listaNums:any){
+  const lista: number[] = [];
+  const largo = listaNums.length;
+  for (let x = 0; x < largo; x++)
+    lista.push(listaNums[x].valor);
+  return lista
+}
+
+
+function parser(data:any){
+  const meta = data[0];
+  const meses = data[1];
+  return [meta,meses]
+}
+
+function messs(listaMeses:any){
+  const lista: string[] = [];
+  const largo = listaMeses.length;
+  for (let x = 0; x < largo; x++)
+    lista.push(JSON.stringify(getMonthName(listaMeses[x])));
+  return lista
+  }
+
+function metaInf(met:any,inf:any){
+  const lista: number[] = []
+  const largo = inf.length;
+  for (let x = 0; x < largo; x++)
+    lista.push(met);
+  return lista
+}
+
+
+
 export default function Barchart(periodo:any){
-  let labels: string[]= periodo.labels;
+
+  const cos = parser(periodo.labels);
+  const meta = periodo.labels[0].cantidad;
+  const meses = messs(cos[1])
+  const info = infor(cos[1])
+  const infoMeta = metaInf(meta,info)
+
   const data = {
-    labels,
-    datasets: [
-      {
-        label: 'Indicador 1',
-        data: labels.map(() => Math.floor(Math.random() * 1000)),
-        backgroundColor: 'rgba(138, 43, 226, 0.5)',
-      },
-      {
-        label: 'Indicador 2',
-        data: labels.map(() => Math.floor(Math.random() * 1000)),
-        backgroundColor: 'rgba(53, 162, 235, 0.5)',
-      },
-    ],
+    labels: meses,
+    datasets: [{
+      data: info,
+      label: 'Indicador',
+      fill: false,
+      backgroundColor: 'rgb(75, 192, 192)',
+      borderColor: 'rgb(255, 255, 255)',
+      tension: 0.1
+    },
+    {
+      data: infoMeta,
+      label: 'Meta',
+      backgroundColor: 'rgb(1, 1, 1)',
+      borderColor: 'rgb(0, 0, 0)',
+      fill: false,
+    }
+  ],
   };
   
   const options = {
