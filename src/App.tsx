@@ -14,14 +14,20 @@ import { parse } from 'path';
 const semestre = ['Enero', 'Febrero', 'Marzo','Abril', 'Mayo', 'Junio'];
 
 const dataExp = [
-  [{"cantidad":40}],
+  [{"cantidad":2}],
   [
     {"Mes":1,"valor":1},
     {"Mes":2,"valor":4},
     {"Mes":3,"valor":1},
     {"Mes":4,"valor":2},
     {"Mes":5,"valor":1},
-    {"Mes":6,"valor":3}
+    {"Mes":6,"valor":3},
+    {"Mes":7,"valor":5},
+    {"Mes":8,"valor":2},
+    {"Mes":9,"valor":3},
+    {"Mes":10,"valor":1},
+    {"Mes":11,"valor":3},
+    {"Mes":12,"valor":2}
   ]]
 
 const otpT = [
@@ -30,8 +36,13 @@ const otpT = [
 ];
 
 const otpP = [
-  {value: "trimestre",label: "Trimestre"},
-  {value: "semestre",label: "Semestre"}
+  {value: "0,5",label: "1° Semestre"},
+  {value: "6,11",label: "2° Semestre"},
+  {value: "0,2",label: "1° Trimestre"},
+  {value: "3,5",label: "2° Trimestre"},
+  {value: "6,8",label: "3° Trimestre"},
+  {value: "9,11",label: "4° Trimestre"}
+
 ];  
 
 const otpI = [
@@ -40,23 +51,40 @@ const otpI = [
   {value: "indicador3",label: "Indicador3"}
 ];
 
+
+
+const otpA = [
+  {value: "2015",label: "2015"},
+  {value: "2016",label: "2016"},
+  {value: "2017",label: "2017"},
+  {value: "2018",label: "2018"},
+  {value: "2019",label: "2019"},
+  {value: "2020",label: "2020"},
+  {value: "2021",label: "2021"}
+];
+
 function App(this: any) {
 
   const [val,setValue] = useState(otpT[0]);
   const [val1,setValue1] = useState(otpP[0]);
   const [val2,setValue2] = useState(otpI[0]);
   const [semestre1,setSemestre1] = useState(semestre);
-  const [val3, setValue3]= useState(moment().locale('es').format('DD-MM-YYYY'))
+  const [val3, setValue3]= useState(otpA[0])
   const [show, setShow] = useState(true);
   const [code,setCode] = useState("");
 
 
 
-  function parser(data:any){
+  function parser(data:any,periodo:any,indicador:any){
     const meta = data[0][0];
     const mes = data[1];
-    console.log();
-    return [meta,mes]
+    const per = periodo.value.split(",");
+    let part2: number;
+    const part1: number = per[0];
+    part2 = +per[1];
+    console.log(part1,part2,mes.slice(part1,part2+1));
+    const mes1 = mes.slice(part1,part2+1);
+    return [indicador,meta,mes1]
   }
 
   const handleSelectChange = (value: any) =>{
@@ -75,9 +103,8 @@ function App(this: any) {
   }
 
   const handleSelectChange3 = (val: any) =>{
-    console.log(val.target.value);
-
-    setValue3(val.target.value);
+    console.log(val);
+    setValue3(val);
 
   }
 
@@ -112,7 +139,7 @@ function App(this: any) {
 
     var data = llamado(val3,c);
     //const coj = parser(dataExp);
-    const coj = parser(dataExp);
+    const coj = parser(dataExp,periodo,indicador);
     setSemestre1(coj);
     console.log(typeof(semestre))
     return coj
@@ -134,14 +161,16 @@ function App(this: any) {
               <Select value={val} defaultValue={otpT[0]} options={otpT} onChange={handleSelectChange}/>
             </div>
             <div className= 'dropdown1'> 
-              <Select value={val1} defaultValue={otpP[0]} options={otpP} onChange={handleSelectChange1}/>
-            </div>
-            <div className= 'dropdown1'> 
               <Select value={val2} defaultValue={otpI[0]} options={otpI} onChange={handleSelectChange2}/>
             </div>
-            <div className= 'dropdown1' > 
-              <Input type="date" value={val3} onChange={handleSelectChange3}/> 
+            <div className= 'dropdown1'> 
+              <Select value={val3} defaultValue={otpA[0]} options={otpA} onChange={handleSelectChange3}/>
             </div>
+            <div className= 'dropdown1'> 
+              <Select value={val1} defaultValue={otpP[0]} options={otpP} onChange={handleSelectChange1}/>
+            </div>
+            
+            
             <div className= 'boton' > <Button color='success' onClick={()=>multT(val,val1,val2,val3)} > Graficar </Button> </div>
           </div>
         </div>

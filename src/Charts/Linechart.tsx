@@ -39,8 +39,8 @@ function infor(listaNums:any){
 
 
 function parser(data:any){
-  const meta = data[0];
-  const meses = data[1];
+  const meta = data[1];
+  const meses = data[2];
   return [meta,meses]
 }
 
@@ -60,9 +60,10 @@ function metaInf(met:any,inf:any){
   return lista
 }
 
-export default function Linechart(periodo:any){
-  const cos = parser(periodo.labels);
-  const meta = periodo.labels[0].cantidad;
+export default function Linechart(informacion:any){
+  const cos = parser(informacion.labels);
+  const indicador = informacion.labels[0].value;
+  const meta = informacion.labels[1].cantidad;
   const meses = messs(cos[1])
   const info = infor(cos[1])
   const infoMeta = metaInf(meta,info)
@@ -71,7 +72,7 @@ export default function Linechart(periodo:any){
     labels: meses,
     datasets: [{
       data: info,
-      label: 'Indicador',
+      label: indicador,
       fill: false,
       borderColor: 'rgb(75, 192, 192)',
       tension: 0.1
@@ -105,7 +106,7 @@ export default function Linechart(periodo:any){
     let ref: any = "";
     ref = barRef;
     const link = document.createElement("a");
-    link.download =  `${periodo.labels[0]} line.png`;
+    link.download =  `${informacion.labels[0]} line.png`;
     link.href = ref.current.toBase64Image();
     link.click();
   }, [])
