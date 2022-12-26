@@ -141,7 +141,8 @@ function App(this: any) {
     //const coj = parser(dataExp);
     const coj = parser(dataExp,periodo,indicador);
     setSemestre1(coj);
-    console.log(typeof(semestre))
+    
+    console.log(typeof(semestre));
     return coj
   }
 
