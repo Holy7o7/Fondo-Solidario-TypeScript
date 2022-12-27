@@ -1,32 +1,42 @@
 .containerBody{
   display: grid;
+  
+  font-family: "Times New Roman", Times, serif; ;
   grid-template-columns: 1fr 1fr;
   gap: 1em;
 }
 
 .container1{
+  
+  font-family: "Work Sans" , Arial, Arial, Helvetica, sans-serif;
   display: grid;
   border: black 5px double;
-  background: rgb(196, 194, 194);
+  background: rgba(234,229,220, 0.981);
   padding: 5px;
 
 }
 
 .container2{
+  
+  font-family: "Times New Roman", Times, serif; 
   display: grid;
-  border: 1px solid black;
-  background: rgb(156, 156, 156);
+  position: fixed; top: 85px; left: 680px;;
+  border: black 5px double;
+  background: rgb(234,229,220);
+  text-shadow: 1px 1px 1px black;
   padding: 5px;
 
 }
 
 .containerButtoms{
+  /* botones de grafica y graficar*/
   display: inline-block;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
 
 }
 
 .blockGauge{
+  
   border: 1px solid black;
   grid-template-columns: 1fr 1fr;
   background: rgb(156, 156, 156);
@@ -36,12 +46,17 @@
   height:25%;
 }
 .graph {
+  /*border: black 5px double; /* BORRAME */
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-shadow: 1px 1px 1px black;
   display: inline-block;
   width: 65%;
   height: 50%;
 }
 
 .gauge{
+  
   justify-self: center;
   align-self: center;
   width:25%;
@@ -49,31 +64,37 @@
 }
 
 .boton{
+  /* BOTON DE GRAFICAR*/
   display:inline;
-  padding: 5px;
+  padding: 1px;
 
 }
 
 .graphTytle{
+  /* titulo del semaforo*/
   font-size: 14px;
   /*background-image: linear-gradient(to left, #384e9510, #c31d1d);*/
   color:#0000008a;
   background-clip: text;
   display: flex;
   -webkit-background-clip: text;
+  font-family:  Helvetica ,Arial, Helvetica, sans-serif;
+  text-shadow: 1px 1px 1px black;
   justify-content: center;
-  align-items: center
+  align-items: center;
 }
 
 .dropdown1{
+  /* botontes de la grafica*/
   display:inline-block;
   text-align: left;
-  width: 200px;
+   width: 200px;
   height: 30px;
   padding: 5px;
 }
 
 .dropdown2{
+  
   display:inline-block;
   text-align: left;
   width: 200px;
@@ -81,6 +102,8 @@
 }
 
 .dropdownStyle{
+  
+  font-family: Work Sans, Arial, Arial, Helvetica, sans-serif;
   background-color: rgb(207, 207, 207) !important;
   border-color: black !important;
   color: black !important;
