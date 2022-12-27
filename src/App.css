@@ -1,6 +1,5 @@
 .containerBody{
   display: grid;
-  
   font-family: "Times New Roman", Times, serif; ;
   grid-template-columns: 1fr 1fr;
   gap: 1em;
@@ -10,33 +9,43 @@
   
   font-family: "Work Sans" , Arial, Arial, Helvetica, sans-serif;
   display: grid;
+  position: absolute;
   border: black 5px double;
   background: rgba(234,229,220, 0.981);
   padding: 5px;
+  width: 90%;
+  height: 85%;
 
 }
 
 .container2{
-  
   font-family: "Times New Roman", Times, serif; 
   display: grid;
-  position: fixed; top: 85px; left: 680px;;
+  position: absolute; top: 85px; left: 1100px;
   border: black 5px double;
   background: rgb(234,229,220);
   text-shadow: 1px 1px 1px black;
-  padding: 5px;
+  padding: 1px;
+  width: normal;
+  height: normal;
 
+}
+
+.exportacion{
+  position: absolute; top:560px;
+  background: rgb(55, 190, 114);
 }
 
 .containerButtoms{
   /* botones de grafica y graficar*/
   display: inline-block;
   grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-
+  
+  width: 100%;
+  height: 25%;
 }
 
 .blockGauge{
-  
   border: 1px solid black;
   grid-template-columns: 1fr 1fr;
   background: rgb(156, 156, 156);
@@ -65,6 +74,7 @@
 
 .boton{
   /* BOTON DE GRAFICAR*/
+  
   display:inline;
   padding: 1px;
 
@@ -88,17 +98,11 @@
   /* botontes de la grafica*/
   display:inline-block;
   text-align: left;
-   width: 200px;
-  height: 30px;
-  padding: 5px;
-}
-
-.dropdown2{
-  
-  display:inline-block;
-  text-align: left;
+  width: 100%;
+  height: 100%;
   width: 200px;
   height: 30px;
+  padding: -1px;
 }
 
 .dropdownStyle{

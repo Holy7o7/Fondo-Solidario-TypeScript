@@ -115,6 +115,6 @@ export default function Linechart(informacion:any){
   return(
   <div>
     <Line options={options} data={data} ref={barRef}/>
-    <button type="button" onClick={downloadPNG}> Exportar </button>
+    <div className="exportacion"><button type="submit" onClick={downloadPNG}> Exportar </button></div>
   </div>);
 };

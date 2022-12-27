@@ -14,19 +14,19 @@ ChartJS.register(
   CategoryScale,
   LinearScale,
   BarElement,
-  Title,
+  Title,        
   Tooltip,
   Legend
 );
 
 
-function getMonthName(monthNumber:any) {
+function getMonthName(monthNumber:any) {    //da nombre a los meses en la tabla
   const date = new Date();
   date.setMonth(monthNumber.Mes - 1);
   return date.toLocaleString('es-ES', { month: 'long' });
 }
 
-function infor(listaNums:any){
+function infor(listaNums:any){          //otorga las barras
   const lista: number[] = [];
   const largo = listaNums.length;
   for (let x = 0; x < largo; x++)
@@ -41,7 +41,7 @@ function parser(data:any){
   return [meta,meses]
 }
 
-function messs(listaMeses:any){
+function messs(listaMeses:any){     //creacion de tabla de despliege de barras
   const lista: string[] = [];
   const largo = listaMeses.length;
   for (let x = 0; x < largo; x++)
@@ -74,15 +74,15 @@ export default function Barchart(informacion:any){
       data: info,
       label: indicador,
       fill: false,
-      backgroundColor: 'rgb(75, 192, 192)',
+      backgroundColor: 'rgb(65,105,99 )', //color de barra   
       borderColor: 'rgb(255, 255, 255)',
       tension: 0.1
     },
     {
       data: infoMeta,
       label: 'Meta',
-      backgroundColor: 'rgb(1, 1, 1)',
-      borderColor: 'rgb(0, 0, 0)',
+      backgroundColor: 'rgb(137,176,167)', // color de la meta barra
+      borderColor: 'rgb(20    , 0, 0)',
       fill: false,
     }
   ],
@@ -95,6 +95,7 @@ export default function Barchart(informacion:any){
         position: 'top' as const,
       },
       title: {
+        
         display: true,
         text: 'Grafico de Barras Trimestral',
       },
@@ -116,7 +117,7 @@ export default function Barchart(informacion:any){
     return(
     <div>
       <Bar options={options} data={data} ref={barRef}/>
-      <button type="button" onClick={downloadPNG}> Exportar </button>
+      <div className="exportacion"><button type="submit" onClick={downloadPNG}> Exportar </button></div>
     </div>);
 };
 
