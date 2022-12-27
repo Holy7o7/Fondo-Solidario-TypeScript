@@ -109,13 +109,8 @@ function App(this: any) {
   }
 
   function llamado(f1:any,codigo:string){
-    const response: object[] = [];
-    axios.get('http://localhost:4001/anio='+f1+'/'+codigo)
-    .then((res) => {
-      return res
-    }).catch((err) => {
-      return "error"
-  });
+    const info = axios.get('http://localhost:3001/variables/M25');
+    console.log(info);
   }
 
   function multT(tipo: any,periodo: any,indicador: any,fecha:any){
