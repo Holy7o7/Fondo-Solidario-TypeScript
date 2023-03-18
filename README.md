@@ -1,4 +1,4 @@
-# INFO282-17: Taller de Ing. de Software / Proyecto "Ruta de un Indicador" para Innoving 2030
+# INFO282: Taller de Ing. de Software / Proyecto "Ruta de un Indicador" para Innoving 2030
 
 Este trebajo fue realizado por el grupo "Fondo Solidario" encargado del área de Vizualizacion y reportes.
 
