@@ -4,10 +4,8 @@ Este trebajo fue realizado por el grupo "Fondo Solidario" encargado del área de
 
 Esta es la versión en Typescript.
 
+Para correr la aplicacion se debe tener instalado Node.js y el lenguaje Typescript, luego ejecutar
+
 ### `npm start`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
-
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Se debe abrir el siguiente link [http://localhost:3000](http://localhost:3000) para vizualizar la aplicacion en el navegador.
